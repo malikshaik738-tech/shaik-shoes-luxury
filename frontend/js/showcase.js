@@ -9,7 +9,6 @@
     const ctx = canvas.getContext('2d');
 
     const TOTAL_FRAMES = 200;
-    const BASE_PATH = '../../';
     const PREFIX = 'ezgif-frame-';
     const EXT = '.jpg';
 
@@ -98,7 +97,7 @@
         for (let i = 1; i <= TOTAL_FRAMES; i++) {
             const img = new Image();
             const num = String(i).padStart(3, '0');
-            img.src = `${BASE_PATH}${PREFIX}${num}${EXT}`;
+            img.src = `assets/frames/${PREFIX}${num}${EXT}`;
             img.onload = () => {
                 loadedCount++;
                 if (loadedCount === 1) {

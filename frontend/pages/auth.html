@@ -18,7 +18,7 @@
     <div class="auth-container">
         <div class="auth-visual">
             <div class="auth-visual-canvas">
-                <img id="authCanvas" src="../../ezgif-frame-001.jpg" alt="SHAIK Luxury" />
+                <img id="authCanvas" src="../assets/frames/ezgif-frame-001.jpg" alt="SHAIK Luxury" />
             </div>
             <div class="auth-visual-overlay"></div>
             <div class="auth-visual-content">
@@ -195,7 +195,7 @@
             frame += dir;
             if (frame >= 200) dir = -1;
             if (frame <= 1) dir = 1;
-            img.src = `../../ezgif-frame-${String(frame).padStart(3, '0')}.jpg`;
+            img.src = `../assets/frames/ezgif-frame-${String(frame).padStart(3, '0')}.jpg`;
         }, 80);
     </script>
 </body>

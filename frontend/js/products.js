@@ -96,7 +96,7 @@
 
   function getFrameUrl(frameNum) {
     const num = String(frameNum).padStart(3, '0');
-    return `../../ezgif-frame-${num}.jpg`;
+    return `assets/frames/ezgif-frame-${num}.jpg`;
   }
 
   function renderProductCard(product) {

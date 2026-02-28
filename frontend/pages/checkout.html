@@ -210,7 +210,8 @@
                 <h2 style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;margin-bottom:16px;">
                     Acquisition Confirmed</h2>
                 <p style="color:rgba(255,255,255,0.5);font-size:16px;margin-bottom:12px;">Order Code:
-                    <strong>SHK-89241Q</strong></p>
+                    <strong>SHK-89241Q</strong>
+                </p>
                 <p
                     style="color:rgba(255,255,255,0.5);font-size:14px;max-width:400px;margin:0 auto 40px;line-height:1.8;">
                     Thank you for choosing SHAIK. Our master artisans are preparing your luxury package. An
@@ -259,7 +260,7 @@
                 total += item.price * item.qty;
                 return `
         <div class="order-item">
-          <img src="${item.image}" class="order-item-img" />
+          <img src="../${item.image}" class="order-item-img" />
           <div class="order-item-info">
             <div class="order-item-name">${item.name}</div>
             <div class="order-item-meta">Size: ${item.size} × ${item.qty}</div>

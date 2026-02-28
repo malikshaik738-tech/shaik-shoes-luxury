@@ -11,7 +11,7 @@
     const TOTAL_FRAMES = 200;
     const FPS = 30;
     const FRAME_DURATION = 1000 / FPS;
-    const BASE_PATH = '../../';
+    const BASE_PATH = 'assets/frames/';
     const FILE_PREFIX = 'ezgif-frame-';
     const FILE_EXT = '.jpg';
 
