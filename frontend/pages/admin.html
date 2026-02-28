@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard — SHAIK Luxury</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&family=Bebas+Neue&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
+</head>
+
+<body class="admin-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar" id="adminSidebar">
+        <div class="admin-sidebar-logo">
+            <div class="admin-logo-text">SHAIK</div>
+            <div class="admin-logo-sub">Command Center</div>
+        </div>
+
+        <nav class="admin-nav">
+            <button class="admin-nav-item active" data-target="dashboardPanel">
+                <svg class="admin-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7" />
+                    <rect x="14" y="3" width="7" height="7" />
+                    <rect x="14" y="14" width="7" height="7" />
+                    <rect x="3" y="14" width="7" height="7" />
+                </svg>
+                Overview
+            </button>
+            <button class="admin-nav-item" data-target="productsPanel">
+                <svg class="admin-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+                    <line x1="7" y1="7" x2="7.01" y2="7" />
+                </svg>
+                Products
+            </button>
+            <button class="admin-nav-item" data-target="ordersPanel">
+                <svg class="admin-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="9" cy="21" r="1" />
+                    <circle cx="20" cy="21" r="1" />
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                </svg>
+                Orders
+            </button>
+            <button class="admin-nav-item" data-target="usersPanel">
+                <svg class="admin-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+                VIP Clients
+            </button>
+            <div class="admin-nav-divider"></div>
+            <button class="admin-nav-item">
+                <svg class="admin-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3" />
+                    <path
+                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                </svg>
+                Site Settings
+            </button>
+            <a href="../index.html" class="admin-nav-item">
+                <svg class="admin-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                    <polyline points="10 17 15 12 10 7" />
+                    <line x1="15" y1="12" x2="3" y2="12" />
+                </svg>
+                Exit to Store
+            </a>
+        </nav>
+
+        <div class="admin-user-area">
+            <div class="admin-avatar">A</div>
+            <div>
+                <div class="admin-user-name">Admin Director</div>
+                <div class="admin-user-role">Super Access</div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN AREA -->
+    <main class="admin-main">
+        <header class="admin-topbar">
+            <button id="adminMenuBtn" style="display:none;color:#fff;"><svg viewBox="0 0 24 24" width="24" height="24"
+                    stroke="currentColor" stroke-width="2" fill="none">
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg></button>
+            <h1 class="admin-topbar-title" id="topbarTitle">Dashboard Overview</h1>
+            <div class="admin-topbar-actions">
+                <input type="text" class="admin-search-input" placeholder="Search orders, clients..." />
+                <button class="admin-btn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="7 10 12 15 17 10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    Export Report
+                </button>
+            </div>
+        </header>
+
+        <div class="admin-content">
+
+            <!-- DASHBOARD PANEL -->
+            <div class="admin-panel active" id="dashboardPanel">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-card-label">Total Revenue (YTD)</div>
+                        <div class="stat-card-value">₹24.8M</div>
+                        <div class="stat-card-change"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                                <polyline points="17 6 23 6 23 12" />
+                            </svg> +18.4% vs last month</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-label">Units Sold</div>
+                        <div class="stat-card-value">342</div>
+                        <div class="stat-card-change"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                                <polyline points="17 6 23 6 23 12" />
+                            </svg> +5.2% vs last month</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-label">VIP Clients</div>
+                        <div class="stat-card-value">1,024</div>
+                        <div class="stat-card-change"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                                <polyline points="17 6 23 6 23 12" />
+                            </svg> +42 new this week</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-label">Avg. Order Value</div>
+                        <div class="stat-card-value">₹10000</div>
+                        <div class="stat-card-change negative"><svg width="12" height="12" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="23 18 13.5 8.5 8.5 13.5 1 6" />
+                                <polyline points="17 18 23 18 23 12" />
+                            </svg> -2.1% vs last month</div>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-title">Revenue Analytics <span>Current Year</span></div>
+                    <div class="chart-canvas-wrap">
+                        <div class="simple-bar-chart">
+                            <div class="bar-item">
+                                <div class="bar-fill" style="height:30%;" data-value="1.2M"></div><span
+                                    class="bar-label">JAN</span>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-fill" style="height:45%;" data-value="1.8M"></div><span
+                                    class="bar-label">FEB</span>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-fill" style="height:40%;" data-value="1.6M"></div><span
+                                    class="bar-label">MAR</span>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-fill" style="height:60%;" data-value="2.4M"></div><span
+                                    class="bar-label">APR</span>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-fill" style="height:55%;" data-value="2.2M"></div><span
+                                    class="bar-label">MAY</span>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-fill" style="height:80%;" data-value="3.2M"></div><span
+                                    class="bar-label">JUN</span>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-fill" style="height:70%;" data-value="2.8M"></div><span
+                                    class="bar-label">JUL</span>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-fill" style="height:90%;" data-value="3.6M"></div><span
+                                    class="bar-label">AUG</span>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-fill" style="height:85%;" data-value="3.4M"></div><span
+                                    class="bar-label">SEP</span>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-fill" style="height:65%;" data-value="2.6M"></div><span
+                                    class="bar-label">OCT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="data-table-wrap">
+                    <div class="data-table-header">
+                        <div class="data-table-title">Recent Transactions</div>
+                        <button class="admin-btn admin-btn-ghost">View All</button>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Client</th>
+                                <th>Date</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="color:#C9A84C;font-family:var(--font-serif);font-size:16px;">#SHK-89241</td>
+                                <td>
+                                    <div style="font-weight:500;">Arjun Mehta</div>
+                                    <div style="font-size:11px;color:rgba(255,255,255,0.4);">arjun@example.com</div>
+                                </td>
+                                <td>Today, 10:42 AM</td>
+                                <td>₹10000</td>
+                                <td><span class="table-status status-pending">Processing</span></td>
+                            </tr>
+                            <tr>
+                                <td style="color:#C9A84C;font-family:var(--font-serif);font-size:16px;">#SHK-89240</td>
+                                <td>
+                                    <div style="font-weight:500;">Sofia Rahman</div>
+                                    <div style="font-size:11px;color:rgba(255,255,255,0.4);">sofia.r@vogue.in</div>
+                                </td>
+                                <td>Yesterday, 4:15 PM</td>
+                                <td>₹89,999</td>
+                                <td><span class="table-status status-shipped">Shipped</span></td>
+                            </tr>
+                            <tr>
+                                <td style="color:#C9A84C;font-family:var(--font-serif);font-size:16px;">#SHK-89239</td>
+                                <td>
+                                    <div style="font-weight:500;">Rohan Kapoor</div>
+                                    <div style="font-size:11px;color:rgba(255,255,255,0.4);">rk@kapoor.com</div>
+                                </td>
+                                <td>Yesterday, 1:20 PM</td>
+                                <td>₹25000</td>
+                                <td><span class="table-status status-shipped">Shipped</span></td>
+                            </tr>
+                            <tr>
+                                <td style="color:#C9A84C;font-family:var(--font-serif);font-size:16px;">#SHK-89238</td>
+                                <td>
+                                    <div style="font-weight:500;">Priya Nair</div>
+                                    <div style="font-size:11px;color:rgba(255,255,255,0.4);">priya.nair@invest.com</div>
+                                </td>
+                                <td>Oct 24, 2024</td>
+                                <td>₹15000</td>
+                                <td><span class="table-status status-delivered">Delivered</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- PRODUCTS PANEL -->
+            <div class="admin-panel" id="productsPanel">
+                <div style="display:flex;justify-content:space-between;margin-bottom:24px;">
+                    <h2 style="font-family:var(--font-serif);font-size:28px;font-weight:300;">Product Catalog</h2>
+                    <button class="admin-btn" onclick="showAddProduct()">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                        Add New Product
+                    </button>
+                </div>
+
+                <div class="data-table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>SKU / Name</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Product Row 1 -->
+                            <tr>
+                                <td><img src="../../ezgif-frame-060.jpg" class="table-img" /></td>
+                                <td>
+                                    <div style="font-weight:500;">SHAIK APEX PRO</div>
+                                    <div style="font-size:11px;color:rgba(255,255,255,0.4);">SKU: SHK-APX-01</div>
+                                </td>
+                                <td>Signature</td>
+                                <td>₹25000</td>
+                                <td>42</td>
+                                <td>
+                                    <div style="display:flex;gap:6px;">
+                                        <button class="table-action-btn action-edit">Edit</button>
+                                        <button class="table-action-btn action-del">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Product Row 2 -->
+                            <tr>
+                                <td><img src="../../ezgif-frame-080.jpg" class="table-img" /></td>
+                                <td>
+                                    <div style="font-weight:500;">SHAIK NOIR</div>
+                                    <div style="font-size:11px;color:rgba(255,255,255,0.4);">SKU: SHK-NOR-02</div>
+                                </td>
+                                <td>Limited</td>
+                                <td>₹15000</td>
+                                <td>15</td>
+                                <td>
+                                    <div style="display:flex;gap:6px;">
+                                        <button class="table-action-btn action-edit">Edit</button>
+                                        <button class="table-action-btn action-del">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Product Row 3 -->
+                            <tr>
+                                <td><img src="../../ezgif-frame-100.jpg" class="table-img" /></td>
+                                <td>
+                                    <div style="font-weight:500;">SHAIK AURUM</div>
+                                    <div style="font-size:11px;color:rgba(255,255,255,0.4);">SKU: SHK-AUR-03</div>
+                                </td>
+                                <td>Limited Exclusive</td>
+                                <td>₹10000</td>
+                                <td><span style="color:#E53E3E;font-weight:600;">2</span></td>
+                                <td>
+                                    <div style="display:flex;gap:6px;">
+                                        <button class="table-action-btn action-edit">Edit</button>
+                                        <button class="table-action-btn action-del">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Product Row 4 -->
+                            <tr>
+                                <td><img src="../../ezgif-frame-120.jpg" class="table-img" /></td>
+                                <td>
+                                    <div style="font-weight:500;">SHAIK CLASSIQUE</div>
+                                    <div style="font-size:11px;color:rgba(255,255,255,0.4);">SKU: SHK-CLS-04</div>
+                                </td>
+                                <td>Classic</td>
+                                <td>₹10000</td>
+                                <td>124</td>
+                                <td>
+                                    <div style="display:flex;gap:6px;">
+                                        <button class="table-action-btn action-edit">Edit</button>
+                                        <button class="table-action-btn action-del">Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pagination">
+                        <button class="page-btn">←</button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <button class="page-btn">→</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ADD PRODUCT FORM PANEL (Hidden by default) -->
+            <div class="admin-panel" id="addProductPanel">
+                <button class="admin-btn admin-btn-ghost" style="margin-bottom:24px;" onclick="showProductsList()">←
+                    Back to Catalog</button>
+
+                <div class="product-form">
+                    <h2 class="product-form-title">Create New Masterpiece</h2>
+
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+                        <div>
+                            <div class="form-group">
+                                <label class="form-label">Product Name</label>
+                                <input type="text" class="form-input" placeholder="e.g. SHAIK VANGUARD" />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Subtitle / Collection</label>
+                                <input type="text" class="form-input" placeholder="e.g. Modernist Series · 2025" />
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Price (₹)</label>
+                                    <input type="number" class="form-input" placeholder="99999" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Stock Quantity</label>
+                                    <input type="number" class="form-input" placeholder="50" />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Category</label>
+                                    <select class="select-input">
+                                        <option>Signature</option>
+                                        <option>Limited Edition</option>
+                                        <option>Classic</option>
+                                        <option>Exclusive Collab</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Badge Label</label>
+                                    <select class="select-input">
+                                        <option>None</option>
+                                        <option>New</option>
+                                        <option>Limited</option>
+                                        <option>Exclusive</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Luxury Description</label>
+                                <textarea class="form-textarea" placeholder="Describe the craftsmanship..."></textarea>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="form-label">360° Image Sequence / Gallery</label>
+                            <div class="image-upload-area" id="imageDropZone">
+                                <input type="file" class="upload-input" multiple accept="image/*" />
+                                <svg class="upload-icon" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="1.5">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                    <polyline points="17 8 12 3 7 8" />
+                                    <line x1="12" y1="3" x2="12" y2="15" />
+                                </svg>
+                                <div class="upload-text">Drag & Drop Frame Sequence</div>
+                                <div class="upload-subtext">Supports PNG, JPG (Max 50MB total)</div>
+                            </div>
+
+                            <div class="uploaded-images" id="uploadedImages">
+                                <!-- Example Pre-uploaded UI -->
+                                <div style="color:rgba(255,255,255,0.4);font-size:12px;width:100%;padding:10px 0;">
+                                    Sequence will appear here. For 360° view, upload 50-200 frames named in order.</div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button class="admin-btn" style="flex:1;justify-content:center;padding:16px;">Save &
+                                    Publish Product</button>
+                                <button class="admin-btn admin-btn-ghost" style="padding:16px;">Save Draft</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        // Sidebar Nav Switching
+        const navItems = document.querySelectorAll('.admin-nav-item[data-target]');
+        const panels = document.querySelectorAll('.admin-panel');
+        const title = document.getElementById('topbarTitle');
+
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navItems.forEach(n => n.classList.remove('active'));
+                panels.forEach(p => p.classList.remove('active'));
+
+                item.classList.add('active');
+                document.getElementById(item.dataset.target).classList.add('active');
+
+                title.textContent = item.textContent.trim() + ' Overview';
+            });
+        });
+
+        // View Switching
+        function showAddProduct() {
+            panels.forEach(p => p.classList.remove('active'));
+            document.getElementById('addProductPanel').classList.add('active');
+            title.textContent = 'Add New Product';
+        }
+
+        function showProductsList() {
+            panels.forEach(p => p.classList.remove('active'));
+            document.getElementById('productsPanel').classList.add('active');
+            title.textContent = 'Products Catalog';
+        }
+
+        // Mobile Sidebar
+        const menuBtn = document.getElementById('adminMenuBtn');
+        const sidebar = document.getElementById('adminSidebar');
+        if (window.innerWidth <= 1024) menuBtn.style.display = 'block';
+
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+
+        // Dummy Upload Behavior
+        const dropZone = document.getElementById('imageDropZone');
+        const uploadInput = document.querySelector('.upload-input');
+        const uploadedBox = document.getElementById('uploadedImages');
+
+        uploadInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                uploadedBox.innerHTML = '';
+                const limit = Math.min(e.target.files.length, 6); // show max 6 thumbs
+                for (let i = 0; i < limit; i++) {
+                    const file = e.target.files[i];
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        uploadedBox.innerHTML += `
+              <div class="uploaded-img-preview">
+                <img src="${e.target.result}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;"/>
+                <button class="img-remove">×</button>
+              </div>
+            `;
+                    };
+                    reader.readAsDataURL(file);
+                }
+                if (e.target.files.length > 6) {
+                    uploadedBox.innerHTML += `<div style="display:flex;align-items:center;justify-content:center;width:80px;height:80px;background:rgba(255,255,255,0.05);border-radius:4px;font-size:12px;color:rgba(255,255,255,0.5);">+${e.target.files.length - 6} more</div>`;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

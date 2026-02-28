@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout — SHAIK Luxury Sneakers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&family=Bebas+Neue&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="page-header">
+        <div class="container">
+            <a href="../index.html" class="page-logo">SHAIK</a>
+            <a href="../index.html" class="back-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Return to Boutique
+            </a>
+        </div>
+    </header>
+
+    <main class="checkout-page">
+        <div class="container">
+            <h1 class="checkout-title">Secure Checkout</h1>
+            <p class="checkout-subtitle">Complete your acquisition of SHAIK luxury footwear.</p>
+
+            <div class="checkout-grid" id="checkoutGrid">
+
+                <div class="checkout-main">
+
+                    <!-- STEP 1: SHIPPING -->
+                    <div class="checkout-form-section" style="margin-bottom: 24px;">
+                        <div class="checkout-section-title">
+                            <span class="step-num">1</span> Shipping Address
+                        </div>
+                        <div class="checkout-form-body">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">First Name</label>
+                                    <input type="text" class="form-input" required />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Last Name</label>
+                                    <input type="text" class="form-input" required />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-input" required />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Mobile Number</label>
+                                <input type="tel" class="form-input" required />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Delivery Address</label>
+                                <input type="text" class="form-input" placeholder="Street Address"
+                                    style="margin-bottom:12px;" required />
+                                <input type="text" class="form-input" placeholder="Apartment, Suite, etc. (optional)" />
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">City</label>
+                                    <input type="text" class="form-input" required />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">State</label>
+                                    <select class="form-input" required>
+                                        <option value="">Select State</option>
+                                        <option value="MH">Maharashtra</option>
+                                        <option value="DL">Delhi</option>
+                                        <option value="KA">Karnataka</option>
+                                        <option value="TN">Tamil Nadu</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">PIN / ZIP Code</label>
+                                    <input type="text" class="form-input" required />
+                                </div>
+                            </div>
+                            <label class="form-check" style="margin-top: 10px;">
+                                <input type="checkbox" checked />
+                                <span>Save this address for future purchases</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2: PAYMENT -->
+                    <div class="checkout-form-section">
+                        <div class="checkout-section-title">
+                            <span class="step-num">2</span> Payment Method
+                        </div>
+                        <div class="checkout-form-body">
+                            <div class="payment-methods">
+                                <label class="payment-option selected" tabindex="0">
+                                    <input type="radio" name="payment" value="card" checked />
+                                    <div class="payment-option-label">
+                                        <div class="payment-option-name">Credit Card</div>
+                                        <div class="payment-option-desc">Powered by Stripe — Fully Secured</div>
+                                    </div>
+                                    <div class="payment-logo">STRIPE</div>
+                                </label>
+                                <label class="payment-option" tabindex="0">
+                                    <input type="radio" name="payment" value="upi" />
+                                    <div class="payment-option-label">
+                                        <div class="payment-option-name">UPI Payment</div>
+                                        <div class="payment-option-desc">Google Pay, PhonePe, Paytm</div>
+                                    </div>
+                                    <div class="payment-logo">RAZORPAY</div>
+                                </label>
+                                <label class="payment-option" tabindex="0">
+                                    <input type="radio" name="payment" value="bank" />
+                                    <div class="payment-option-label">
+                                        <div class="payment-option-name">White-Glove Bank Transfer</div>
+                                        <div class="payment-option-desc">For orders exceeding ₹5,00,000</div>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <!-- CARD DETAILS FORM -->
+                            <div id="cardDetailsForm"
+                                style="margin-top:24px; border-top:1px solid rgba(255,255,255,0.1); padding-top:24px;">
+                                <div class="form-group">
+                                    <label class="form-label">Card Number</label>
+                                    <input type="text" class="form-input" placeholder="0000 0000 0000 0000" />
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label">Expiry Date</label>
+                                        <input type="text" class="form-input" placeholder="MM/YY" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">CVC</label>
+                                        <input type="text" class="form-input" placeholder="123" />
+                                    </div>
+                                </div>
+                                <div class="form-group" style="margin-bottom:0;">
+                                    <label class="form-label">Name on Card</label>
+                                    <input type="text" class="form-input" placeholder="JOHN DOE" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ORDER SUMMARY -->
+                <div class="checkout-sidebar">
+                    <div class="order-summary" id="orderSummary">
+                        <div class="order-summary-header">Your Collection Details</div>
+                        <div class="order-items" id="checkoutItemsList">
+                            <!-- JS rendered -->
+                        </div>
+                        <div class="order-totals">
+                            <div class="order-total-row">
+                                <span>Subtotal</span>
+                                <span id="chkSubtotal">₹0</span>
+                            </div>
+                            <div class="order-total-row">
+                                <span>White-Glove Shipping</span>
+                                <span style="color:#C9A84C;">Complimentary</span>
+                            </div>
+                            <div class="order-total-row">
+                                <span>VIP Taxes (Included)</span>
+                                <span>₹0</span>
+                            </div>
+                            <div class="order-total-row grand">
+                                <span>Total Investment</span>
+                                <span id="chkTotal">₹0</span>
+                            </div>
+                        </div>
+
+                        <button class="checkout-btn" id="placeOrderBtn" onclick="processOrder()">
+                            Authenticate & Purchase
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                <polyline points="9 12 11 14 15 10" />
+                            </svg>
+                        </button>
+                        <div class="secure-badge">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                            </svg>
+                            Premium 256-bit SSL Encryption
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SUCCESS SCREEN -->
+            <div id="orderSuccessScreen" style="display:none; text-align:center; padding: 120px 0;">
+                <div
+                    style="width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#C9A84C,#E8C87A);margin:0 auto 30px;display:flex;align-items:center;justify-content:center;font-size:50px;color:#000;box-shadow:0 0 60px rgba(201,168,76,0.3);">
+                    ✦</div>
+                <h2 style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;margin-bottom:16px;">
+                    Acquisition Confirmed</h2>
+                <p style="color:rgba(255,255,255,0.5);font-size:16px;margin-bottom:12px;">Order Code:
+                    <strong>SHK-89241Q</strong></p>
+                <p
+                    style="color:rgba(255,255,255,0.5);font-size:14px;max-width:400px;margin:0 auto 40px;line-height:1.8;">
+                    Thank you for choosing SHAIK. Our master artisans are preparing your luxury package. An
+                    authentication email has been dispatched.</p>
+                <a href="../index.html" class="checkout-btn"
+                    style="display:inline-flex;width:auto;padding:16px 40px;text-decoration:none;">Return to
+                    Boutique</a>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="../js/cart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Payment option toggle
+            const options = document.querySelectorAll('.payment-option');
+            const cardForm = document.getElementById('cardDetailsForm');
+            options.forEach(opt => {
+                opt.addEventListener('click', () => {
+                    options.forEach(o => o.classList.remove('selected'));
+                    opt.classList.add('selected');
+                    const radio = opt.querySelector('input');
+                    radio.checked = true;
+                    if (radio.value === 'card') {
+                        cardForm.style.display = 'block';
+                    } else {
+                        cardForm.style.display = 'none';
+                    }
+                });
+            });
+
+            // Load cart data
+            const cart = window.shaikCart ? window.shaikCart.getCart() : JSON.parse(localStorage.getItem('shaik_cart') || '[]');
+            const container = document.getElementById('checkoutItemsList');
+            const subtotalEl = document.getElementById('chkSubtotal');
+            const totalEl = document.getElementById('chkTotal');
+
+            if (cart.length === 0) {
+                document.getElementById('checkoutGrid').innerHTML = '<div style="text-align:center;padding:100px;width:100%;"><h2 style="font-family:\'Cormorant Garamond\',serif;font-size:32px;margin-bottom:20px;">Your Collection is Empty</h2><a href="../index.html" class="checkout-btn" style="display:inline-flex;width:auto;margin:0 auto;text-decoration:none;">Discover Collection</a></div>';
+                return;
+            }
+
+            let total = 0;
+            container.innerHTML = cart.map(item => {
+                total += item.price * item.qty;
+                return `
+        <div class="order-item">
+          <img src="${item.image}" class="order-item-img" />
+          <div class="order-item-info">
+            <div class="order-item-name">${item.name}</div>
+            <div class="order-item-meta">Size: ${item.size} × ${item.qty}</div>
+          </div>
+          <div class="order-item-price">₹${(item.price * item.qty).toLocaleString('en-IN')}</div>
+        </div>
+        `;
+            }).join('');
+
+            subtotalEl.textContent = '₹' + total.toLocaleString('en-IN');
+            totalEl.textContent = '₹' + total.toLocaleString('en-IN');
+        });
+
+        function processOrder() {
+            const btn = document.getElementById('placeOrderBtn');
+            btn.style.opacity = '0.7';
+            btn.style.pointerEvents = 'none';
+            btn.innerHTML = 'Authenticating... <span style="display:inline-block;width:16px;height:16px;border:2px solid #000;border-top-color:transparent;border-radius:50%;animation:spin 1s linear infinite;"></span>';
+
+            setTimeout(() => {
+                document.getElementById('checkoutGrid').style.display = 'none';
+                document.getElementById('orderSuccessScreen').style.display = 'block';
+                window.scrollTo(0, 0);
+                localStorage.removeItem('shaik_cart');
+            }, 2500);
+        }
+    </script>
+</body>
+
+</html>
